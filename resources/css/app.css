@@ -42,8 +42,8 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-primary-rgb: 255, 92, 174;
-  --bs-secondary-rgb: 131, 4, 68;
+  --bs-primary-rgb: 40, 128, 151;
+  --bs-secondary-rgb: 84, 152, 168;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
@@ -2846,8 +2846,8 @@ textarea.form-control-lg {
 
 .btn-primary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #d63384;
-  --bs-btn-border-color: #ce5692;
+  --bs-btn-bg: #288097;
+  --bs-btn-border-color: #5cb0c4;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #d1488c;
   --bs-btn-hover-border-color: #ce5692;
@@ -10855,9 +10855,9 @@ html {
   width: 100%;
   max-width: 7rem;
   height: 0.25rem;
-  background-color: rgb(255, 191, 221);
+  background-color: #71CEE3;
   border-radius: 1rem;
-  border-color: rgb(255, 191, 221);
+  border-color: #71CEE3;
 }
 .divider-custom .divider-custom-line:first-child {
   margin-right: 1rem;
@@ -10866,7 +10866,7 @@ html {
   margin-left: 1rem;
 }
 .divider-custom .divider-custom-icon {
-  color: rgb(255, 191, 221);
+  color: #71CEE3;
   font-size: 2rem;
 }
 .divider-custom.divider-light .divider-custom-line {
@@ -10907,13 +10907,13 @@ html {
   color: #fff;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
-  color: rgb(255, 191, 221);
+  color: #71CEE3;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
   color: #fff;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link.active {
-  color: rgb(255, 191, 221);
+  color: #71CEE3;
 }
 #mainNav .navbar-toggler {
   font-size: 80%;
@@ -10935,11 +10935,11 @@ html {
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
     color: #fff;
-    background: rgb(255, 191, 221);
+    background: #71CEE3;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
     color: #fff;
-    background: rgb(255, 191, 221);
+    background: #71CEE3;
   }
   #mainNav.navbar-shrink {
     padding-top: 0.5rem;
@@ -10967,21 +10967,6 @@ html {
   color: #6c757d;
 }
 
-.masthead {
-  background-image: url("../assets/img/familia_background.jpg");
- background-color: #d63384;
- background-repeat: no-repeat;
- background-size: 1920px;
-  background-position-x: 50%;
-  background-position-y: 90%;
-}
-#filter-background{
-  width: 100%;
-  background-color: rgba(255, 191, 221, .7);
-  padding-top: calc(6rem + 74px);
-  padding-bottom: 3rem;
-}
-
 .masthead .masthead-heading {
   font-size: 2.75rem;
   line-height: 2.75rem;
@@ -10991,7 +10976,6 @@ html {
 }
 .masthead .masthead-avatar {
   width: 15rem;
-  rotate: -60deg;
 }
 
 @media (min-width: 1336px) {
@@ -11004,7 +10988,7 @@ html {
 
 @media (min-width: 992px) {
 
-  .masthead #filter-background { 
+  .masthead #filter-background {
     padding-top: calc(6rem + 104px);
     padding-bottom: 3rem;
   }
@@ -11030,7 +11014,7 @@ html {
   left: 0;
   transition: all 0.2s ease-in-out;
   opacity: 0;
-  background-color: rgb(255, 191, 221);
+  background-color: #71CEE3;
 }
 .portfolio .portfolio-item .portfolio-item-caption:hover {
   opacity: 1;
@@ -11040,7 +11024,7 @@ html {
 }
 
 .portfolio-modal .btn-close {
-  color: rgb(255, 191, 221);
+  color: #71CEE3;
   font-size: 2rem;
   padding: 1rem;
 }
@@ -11058,11 +11042,11 @@ html {
 .footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: #d63384;
+  background-color: #5498A8;
   color: #fff;
 }
 
 .copyright {
-  background-color:#702048
+  background-color:#145563
 }
 

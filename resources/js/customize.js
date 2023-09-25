@@ -15,13 +15,12 @@ $(function () {
         telefoneConvidado: null
     };
 
-    var valorMinimoRifa = 10;
+    var valorMinimoRifa = 30;
 
     var iDsPassos = {
         1: "passo-1-rifa-santos",
         2: "passo-2-rifa-santos",
-        3: "passo-3-rifa-santos",
-        4: "passo-4-rifa-santos",
+        3: "passo-3-rifa-santos"
     };
     var quantidadePassos = Object.keys(iDsPassos).length;
 
@@ -31,10 +30,6 @@ $(function () {
                 return validarPasso1();
             case 2:
                 return validarPasso2();
-            case 3:
-                return validarPasso3();
-            case 4:
-                return validarPasso4();
         }
     }
 
@@ -53,36 +48,6 @@ $(function () {
     }
 
     function validarPasso2() {
-        if (!formAttributes.tipoPresente) {
-            alert('Erro: Tipo de presente não foi escolhido');
-            return false;
-        }
-
-        if (formAttributes.tipoPresente == "fraldas" && !formAttributes.tamanhoFralda) {
-            alert('Erro: Tamanho de fraldas não foi escolhido');
-            return false;
-        }
-
-        if (formAttributes.tipoPresente == "dinheiro") {
-            if (!formAttributes.valorDinheiro) {
-                alert('Erro: Valor em dinheiro não foi preenchido');
-                return false;
-            }
-
-            var floatValue = parseFloat(formAttributes.valorDinheiro);
-
-
-            if (!floatValue || floatValue < 10) {
-                alert('Erro: Valor mínimo da rifa é R$ 10,00');
-                return false;
-            }
-        }
-
-
-        return true;
-    }
-
-    function validarPasso3() {
         if (!formAttributes.nomeConvidado) {
             alert('Erro: Informe seu nome');
             return false;
@@ -120,10 +85,6 @@ $(function () {
     function validateEmail(inputText) {
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         return inputText.match(mailformat);
-    }
-
-    function validarPasso4() {
-        return true;
     }
 
     // PASSO 1
@@ -242,8 +203,6 @@ $(function () {
     $('#botao-enviar-informacoes').click(function () {
         validarPasso1();
         validarPasso2();
-        validarPasso3();
-        validarPasso4();
         fillFormInputs(formAttributes);
 
         $("#formulario_rifa").trigger('submit');

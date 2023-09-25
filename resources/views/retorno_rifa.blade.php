@@ -16,7 +16,7 @@
                     acontecido</h2>
                 <h3 class="my-5"> Mesmo assim esperamos você no chá drive-thru da Dulce</h3>
             @endif
-            <h4>Dia 10 de Junho de 2023, das 14:00 as 18:00</h3>
+            <h4>Dia 10 de Junho de 2023, das 14:00 as 18:00</h4>
                 <h4>Endereço: Rua Tília, 60, Jardim Das Flores, Osasco</h4>
                 <h4>CEP: 06120-080</h4>
 

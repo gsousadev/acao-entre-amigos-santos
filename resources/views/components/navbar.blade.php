@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="#page-top">Chá de Fraldas da Dulce</a>
+        <a class="navbar-brand" href="#page-top">Ação entre Amigos</a>
         <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
             data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -10,13 +10,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#quem-somos">
-                        Quem Somos
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#como-sera">
+                        Como Será
                     </a>
                 </li>
                 <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#como-sera">
-                        Como sera
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#premios">
+                        Prêmios
                     </a>
                 </li>
                 <li class="nav-item mx-0 mx-lg-1">
@@ -25,13 +25,8 @@
                     </a>
                 </li>
                 <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#rifa-dos-santos">
-                        Rifa
-                    </a>
-                </li>
-                <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#mensagem-para-dulce">
-                        Mensagem
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#rifa">
+                        Comprar
                     </a>
                 </li>
             </ul>

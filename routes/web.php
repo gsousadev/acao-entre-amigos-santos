@@ -37,7 +37,7 @@ Route::post('/mensagem/deletar', [MensagemController::class, 'delete']);
 
 
 Route::get('/login', [AdminController::class, 'loginView'])->name('loginView');
-Route::post('/login', [AdminController::class, 'loginPerform'])->name('loginPerform');;
+Route::post('/login', [AdminController::class, 'loginPerform'])->name('loginPerform');
 Route::get('/admin', [AdminController::class, 'adminView']);
 Route::get('/logout', [AdminController::class, 'logout']);
 
@@ -50,7 +50,7 @@ Route::get('/email_rifa', function(){
             'telefone_convidado' => '(11) 98766-2763',
             'tipo_presente' => 'FLALDAS',
             'valor_dinheiro' => '-',
-            'tamanho_fralda' => 'RN', 
+            'tamanho_fralda' => 'RN',
             'validada' => true,
             'santo' => [
                 'nome' => 'Santo Antônio',
