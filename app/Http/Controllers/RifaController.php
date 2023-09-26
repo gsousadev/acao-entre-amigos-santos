@@ -21,9 +21,6 @@ class RifaController extends Controller
 
             $rifa = new Rifa();
 
-            $rifa->tipo_presente = (string)trim($request->get('tipo_presente'));
-            $rifa->valor_dinheiro = (float)trim(str_replace(',', '.', $request->get('valor_dinheiro')));
-            $rifa->tamanho_fralda = (string)trim($request->get('tamanho_fralda'));
             $rifa->nome_convidado = (string)$request->get('nome_convidado');
             $rifa->email_convidado = (string)trim($request->get('email_convidado'));
             $rifa->telefone_convidado = $this->limparTelefone(trim($request->get('telefone_convidado')));

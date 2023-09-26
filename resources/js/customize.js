@@ -240,9 +240,6 @@ function fillInfoConfirmation(formAttributes) {
 
 function fillFormInputs(formAttributes) {
     $("#santo_escolhido").val(formAttributes.santoId);
-    $("#tipo_presente").val(formAttributes.tipoPresente);
-    $("#valor_dinheiro").val(formAttributes.valorDinheiro);
-    $("#tamanho_fralda").val(formAttributes.tamanhoFralda);
     $("#nome_convidado").val(formAttributes.nomeConvidado);
     $("#email_convidado").val(formAttributes.emailConvidado);
     $("#telefone_convidado").val(formAttributes.telefoneConvidado);

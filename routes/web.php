@@ -29,11 +29,6 @@ Route::post('/rifa/sortear', [RifaController::class, 'raffle']);
 
 Route::post('/sorteio/limpar', [SorteioController::class, 'limpar']);
 
-Route::post('/mensagem', [MensagemController::class, 'create']);
-Route::post('/mensagem/validar', [MensagemController::class, 'markValidateTrue']);
-Route::post('/mensagem/invalidar', [MensagemController::class, 'markValidateFalse']);
-Route::post('/mensagem/deletar', [MensagemController::class, 'delete']);
-
 
 
 Route::get('/login', [AdminController::class, 'loginView'])->name('loginView');
@@ -48,9 +43,6 @@ Route::get('/email_rifa', function(){
             'nome_convidado' => 'Guilherme Santos',
             'email_convidado' => 'guilherme.santos@email.com',
             'telefone_convidado' => '(11) 98766-2763',
-            'tipo_presente' => 'FLALDAS',
-            'valor_dinheiro' => '-',
-            'tamanho_fralda' => 'RN',
             'validada' => true,
             'santo' => [
                 'nome' => 'Santo Antônio',
