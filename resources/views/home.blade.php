@@ -26,13 +26,11 @@
                     <div class="col-12 col-lg-6 align-self-center">
                         <p class="lh-lg fs-4">
                             A "Ação entre Amigos" tem como objetivo arrecadar fundos para a manutenção e reparos da
-                            rádio. O valor de cada nome será de <strong>R$ 30,00. </strong>
+                            rádio. O valor de cada nome será de <strong>R$ 30,00 , </strong> dando direito de concorrer aos dois prêmios
                         </p>
-
                         <p class="lh-lg fs-4">
                             Ao adquirir um nome você contribui com a obra
-                            de evangelização da diocese, realizada por meio da Rádio Católica de Osasco e
-                            concorre aos dois prêmios.
+                            de evangelização da diocese, realizada por meio da Rádio Católica de Osasco.
                         </p>
                     </div>
                     <div class="col-12 col-lg-6">
@@ -67,12 +65,6 @@
                 <p class="fs-5">
                     1 imagem fac-simile de Nossa Senhora Aparecida (35cm aproximadamente)
                 </p>
-                <div class="mt-4">
-                    <a class="btn btn-xl btn-primary" href="#como-participar">
-                        <i class="fas fa-arrow-down"> me-2</i>
-                        Quero Concorrer
-                    </a>
-                </div>
             </div>
 
         </div>
@@ -83,12 +75,6 @@
                 <p class="fs-5">
                     1 quadro de São Francisco de Assis pintado à mão (120cm X 90 cm)
                 </p>
-                <div class="mt-4">
-                    <a class="btn btn-xl btn-primary" href="#como-participar">
-                        <i class="fas fa-arrow-down"> me-2</i>
-                        Quero Participar
-                    </a>
-                </div>
             </div>
             <div class="col-lg-6 order-1 order-lg-2 mt-5 mt-lg-0">
                 <img class="w-100 mx-auto rounded" src="images/premio_2.jpeg" alt="..."/>
@@ -116,17 +102,17 @@
 
                 <h3 class="passo-titulo"> Passo 1 </h3>
                 <p class="passo-texto">
-                    Escolha Santo que preferir disponível na lista de santos. Na escolha de um santo você já está
+
+                    Escolha o santo que preferir disponível na lista. Na escolha de um nome você já está
                     concorrendo aos dois prêmios. </p>
                 <h3 class="passo-titulo"> Passo 2 </h3>
                 <p class="passo-texto">
                     Nos informe seu nome e seu número de celular (de preferência whatsapp), para que
                     possamos entrar em contado com você caso seja o grande premiado.</p>
                 <h3 class="passo-titulo"> Passo 3 </h3>
-                <p class="passo-texto">Confirme as informações para o sorteio e efetue o pagamento, através do QRCode ou chave  PIX.</p>
-                <p class="passo-texto d-none"><strong class="text-danger p-3 m bg-white"> Envie o comprovante de
-                        pagamento para o whatsapp (11)
-                        94005-3900</strong> </p>
+                <p class="passo-texto">Confirme as informações para o sorteio e efetue o pagamento, através do QRCode ou chave PIX.</p>
+                <p class="passo-texto"><strong class="text-danger p-3 m bg-white"> Envie o comprovante de
+                        pagamento para o whatsapp (11) 94005-3900</strong> </p>
                 <div class="mt-4">
                     <a class="btn btn-xl btn-outline-light" href="#comprar">
                         <i class="fas fa-arrow-down"> me-2</i>
