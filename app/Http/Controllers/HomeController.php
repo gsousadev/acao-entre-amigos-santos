@@ -25,8 +25,6 @@ class HomeController extends Controller
 
             $dadosParaTela = [
                 'rifaDosSantos' => $this->buscarSantos($rifas),
-                'fraldas' => $this->buscarQuantidadeFraldasRestantes($rifas),
-                'mensagens' => $this->buscarMensagens(),
                 'ultimoSorteio' => $this->buscarUltimoSorteio(),
             ];
 
@@ -59,7 +57,7 @@ class HomeController extends Controller
         ->orderByDesc('id')
         ->first();
 
-        $ultimoSorteio = $ultimoSorteio instanceof Sorteio ? 
+        $ultimoSorteio = $ultimoSorteio instanceof Sorteio ?
         $ultimoSorteio->rifa->load('santo')->toArray() : [];
 
         return $ultimoSorteio;
@@ -82,37 +80,5 @@ class HomeController extends Controller
         }
 
         return $santos;
-    }
-
-    private function buscarQuantidadeFraldasRestantes(Collection $rifas): array
-    {
-
-        $qtdFraldasRn = $rifas->filter(function (Rifa $rifa) {
-            return $rifa->tamanho_fralda == 'rn';
-        })->count();
-
-        $qtdFraldasP = $rifas->filter(function (Rifa $rifa) {
-            return $rifa->tamanho_fralda == 'p';
-        })->count();
-
-        $qtdFraldasM = $rifas->filter(function (Rifa $rifa) {
-            return $rifa->tamanho_fralda == 'm';
-        })->count();
-
-        $qtdFraldasG = $rifas->filter(function (Rifa $rifa) {
-            return $rifa->tamanho_fralda == 'g';
-        })->count();
-
-        return [
-            'rn' => self::LIMITE_QTD_FRALDAS_NR == $qtdFraldasRn ? false : true,
-            'p' => self::LIMITE_QTD_FRALDAS_P == $qtdFraldasP ? false : true,
-            'm' => self::LIMITE_QTD_FRALDAS_M == $qtdFraldasM ? false : true,
-            'g' => self::LIMITE_QTD_FRALDAS_G == $qtdFraldasG ? false : true,
-        ];
-    }
-
-    private function buscarMensagens(): array
-    {
-        return  Mensagem::query()->where('validada', true)->get()->toArray();
     }
 }

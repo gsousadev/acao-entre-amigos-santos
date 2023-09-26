@@ -172,7 +172,8 @@
                                                             <tr>
                                                                 <td style="line-height: 24px; font-size: 16px; margin: 0;"
                                                                     align="center">
-                                                                    <h1> Chá De Fraldas da Dulce</h1>
+                                                                    <h1> Ação entre amigos - Rádio Católica de
+                                                                        Osasco</h1>
                                                                     <img style="width:300px;margin:0 auto;display:block;" src="https://chafraldasdulce.up.railway.app/images/rifa_dos_santos.png" alt="..." />
                                                                 </td>
                                                             </tr>
@@ -201,7 +202,8 @@
                                                                     <h1 class="h4 fw-700"
                                                                         style="padding-top: 0; padding-bottom: 0; font-weight: 700 !important; vertical-align: baseline; font-size: 18px; line-height: 33.6px; margin: 0;"
                                                                         align="center">
-                                                                       Você comprou uma das rifas do chá da Dulce
+                                                                       Você comprou um bilhete da ação entre amigos
+                                                                        da Rádio Católica de Osasco
                                                                     </h1>
                                                                     <table class="s-4 w-full" role="presentation"
                                                                         border="0" cellpadding="0" cellspacing="0"
@@ -219,7 +221,7 @@
                                                                     <p class=""
                                                                         style="line-height: 24px; font-size: 16px; width: 100%; margin: 0;"
                                                                         align="center">
-                                                                       Aqui estão suas informações da rifa
+                                                                       Aqui estão suas informações do bilhete
                                                                     </p>
                                                                     <table class="s-4 w-full" role="presentation"
                                                                         border="0" cellpadding="0"
@@ -238,48 +240,30 @@
 
 
                                                                     <table class="s-4 w-full table table-striped
-                                                                    table-hover	
+                                                                    table-hover
                                                                     table-borderless
                                                                     align-middle
                                                                     table-primary" role="presentation"
                                                                         border="0" cellpadding="10"
                                                                         cellspacing="10" style="width: 100%;text-align: left!important;"
-                                                                        width="100%" align="left"> 
+                                                                        width="100%" align="left">
                                                                         <tbody>
                                                                             <tr>
-                                                                                <th>Número da Rifa</th>
+                                                                                <th>Número do bilhete</th>
                                                                                 <td  style="min-width: 250px">{{ data_get($rifa, 'id', '-') }}</td>
-                                                                            </tr>  
-                                                                            <tr> 
+                                                                            </tr>
+                                                                            <tr>
                                                                                 <th>Nome</th>
                                                                                 <td>{{ data_get($rifa, 'nome_convidado', '-') }}</td>
-                                                                            </tr>   
-                                                                            <tr> 
-                                                                                <th>Tipo do Presente Escolhido</th>
-                                                                                <td>{{ data_get($rifa, 'tipo_presente', '-') }}</td>
-                                                                            </tr>  
-                                                                            @if(data_get($rifa, 'tipo_presente') == "dinheiro")
-                                                                            <tr> 
-                                                                                <th>Valor em Dinheiro</th>
-                                                                                <td>{{ data_get($rifa, 'valor_dinheiro', '-') }}</td>
-                                                                            </tr>  
-                                                                            @endif
-                                                                            @if(data_get($rifa, 'tipo_presente') == "fraldas")
-                                                                            <tr> 
-                                                                                <th>Tamanho da Fralda</th>
-                                                                                <td>{{ strtoupper(data_get($rifa, 'tamanho_fralda', '-')) }}</td>
-                                                                            </tr>  
-                                                                            @endif
-                                                                            <tr> 
+                                                                            </tr>
+                                                                            <tr>
                                                                                 <th>Nome do Santo</th>
                                                                                 <td>{{ data_get($rifa, 'santo.nome', '-') }}</td>
-                                                                            </tr>  
-                                                                            <tr> 
-                                                                                <th>Data Cadastro</th>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th>Data da Compra</th>
                                                                                 <td>{{ data_get($rifa, 'created_at', '-') }}</td>
-                                                                            </tr>  
-                                                                       
-
+                                                                            </tr>
                                                                             <tr>
                                                                                 <td style="line-height: 16px; font-size: 16px; width: 100%; height: 16px; margin: 0;"
                                                                                     align="center" width="100%"

@@ -13,18 +13,15 @@ use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
 
 /**
  * @property string $id
- * @property string $tipo_presente
- * @property string $valor_dinheiro
- * @property string $tamanho_fralda
  * @property string $nome_convidado
  * @property string $email_convidado
  * @property string $telefone_convidado
  */
 class Rifa extends Model
-{   
+{
     const UPDATED_AT = null;
     use HasFactory;
-    
+
 
     public function santo(): BelongsTo
     {

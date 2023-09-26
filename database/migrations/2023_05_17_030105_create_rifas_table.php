@@ -13,9 +13,6 @@ return new class extends Migration
     {
         Schema::create('rifas', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo_presente');
-            $table->float('valor_dinheiro')->nullable();
-            $table->string('tamanho_fralda')->nullable();
             $table->string('nome_convidado');
             $table->string('email_convidado');
             $table->string('telefone_convidado');

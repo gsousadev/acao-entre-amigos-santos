@@ -5,10 +5,7 @@
         <nav class="navbar navbar-expand navbar-light bg-light" id="navbar-admin">
             <ul class="nav navbar-nav d-flex">
                 <li class="nav-item h5 me-3">
-                    <a class="nav-link btn btn-primary text-white " href="#pagina-admin">Rifas</a>
-                </li>
-                <li class="nav-item h5 me-3">
-                    <a class="nav-link btn btn-primary text-white " href="#mensagens">Mensagens</a>
+                    <a class="nav-link btn btn-primary text-white " href="#pagina-admin">Bilhetes</a>
                 </li>
                 <li class="nav-item h5 me-3">
                     <a class="nav-link btn  btn-primary text-white" href="#sorteio-rifa">Sorteio</a>
@@ -25,8 +22,8 @@
     @if (session('mensagem_alerta'))
         <div class="row justify-content-center">
             <div
-                class="col-12 col-lg-10 text-center 
-            
+                class="col-12 col-lg-10 text-center
+
             @switch(data_get(session('mensagem_alerta'),'tipo'))
                 @case('danger')
                     bg-danger
@@ -41,7 +38,7 @@
                 @default
                     bg-dark
             @endswitch
-            
+
             ">
                 <h2 class="text-white py-2 m-0"> {{ data_get(session('mensagem_alerta'), 'mensagem') }} </h2>
             </div>
@@ -51,11 +48,11 @@
 <div class="container-fluid" id="pagina-admin">
     <div class="row justify-content-center">
         <div class="col-12 col-lg-10" id="rifas">
-            <h1> RIFAS </h1>
+            <h1> Bibletes </h1>
             <div class="table-responsive rounded">
                 <table
                     class="table table-striped
-                table-hover	
+                table-hover
                 table-borderless
                 align-middle
                 table-primary
@@ -66,9 +63,6 @@
                             <th>Nome do Convidado</th>
                             <th>Email do Convidado</th>
                             <th>Telefone do Convidado</th>
-                            <th>Tipo de Presente</th>
-                            <th>Valor em Dinheiro</th>
-                            <th>Tamanho da Fralda</th>
                             <th>Validada</th>
                             <th>Nome do Santo</th>
                             <th>Número do Santo</th>
@@ -84,9 +78,6 @@
                                 <td>{{ data_get($rifa, 'nome_convidado', '-') }}</td>
                                 <td>{{ data_get($rifa, 'email_convidado', '-') }}</td>
                                 <td>{{ data_get($rifa, 'telefone_convidado', '-') }}</td>
-                                <td>{{ data_get($rifa, 'tipo_presente', '-') }}</td>
-                                <td>{{ data_get($rifa, 'valor_dinheiro', '-') }}</td>
-                                <td>{{ strtoupper(data_get($rifa, 'tamanho_fralda', '-')) }}</td>
                                 <td>{{ data_get($rifa, 'validada') ? 'SIM' : 'NÃO' }}
                                 </td>
                                 <td>{{ data_get($rifa, 'santo.nome', '-') }}</td>
@@ -131,69 +122,6 @@
         </div>
     </div>
 
-    <div class="row justify-content-center ">
-        <div class="col-12 col-lg-10" id="mensagens">
-            <h1>Mensagens</h1>
-            <div class="table-responsive rounded">
-                <table
-                    class="table table-striped
-                table-hover	
-                table-borderless
-                align-middle
-                table-primary
-                text-center">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>#ID</th>
-                            <th>Nome</th>
-                            <th>Mensagem</th>
-                            <th>Validada</th>
-                            <th>Data Envio</th>
-                            <th colspan="3">Ações</th>
-                        </tr>
-
-                    </thead>
-                    <tbody class="table-group-divider">
-                        @foreach ($mensagens as $mensagem)
-                            <tr>
-                                <td scope="row">{{ data_get($mensagem, 'id', '-') }}</td>
-                                <td>{{ data_get($mensagem, 'nome', '-') }}</td>
-                                <td>{{ data_get($mensagem, 'mensagem', '-') }}</td>
-                                <td>{{ data_get($mensagem, 'validada') ? 'SIM' : 'NÃO' }}</td>
-                                <td>{{ data_get($mensagem, 'created_at', '-') }}</td>
-                                <td>
-                                    <form action="/mensagem/validar" method="post">
-                                        @csrf
-                                        <input type="hidden" name="mensagem" value="{{ data_get($mensagem, 'id') }}">
-                                        <button type="submit" class="btn btn-success">Validar</button>
-                                    </form>
-                                </td>
-                                <td>
-                                    <form action="/mensagem/invalidar" method="post">
-                                        @csrf
-                                        <input type="hidden" name="mensagem" value="{{ data_get($mensagem, 'id') }}">
-                                        <button type="submit" class="btn btn-warning">Invalidar</button>
-                                    </form>
-                                </td>
-                                <td>
-                                    <form action="/mensagem/deletar" method="post">
-                                        @csrf
-                                        <input type="hidden" name="mensagem" value="{{ data_get($mensagem, 'id') }}">
-                                        <button type="submit" class="btn btn-danger">Deletar</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                    <tfoot>
-
-                    </tfoot>
-                </table>
-            </div>
-        </div>
-    </div>
-
-
     <div class="row justify-content-center my-5 pb-5" id="sorteio-rifa">
         <div class="col-12 col-md-10 text-center">
             <h1 class="py-2">Sorteio da Rifa dos Santos</h1>
@@ -220,7 +148,7 @@
                 <h1 class="py-2">Logs de Erro</h1>
                 <div class="table-responsive" style="max-height: 500px">
                     <table class="table table-striped
-                    table-hover	
+                    table-hover
                     table-borderless
                     align-middle
                     table-primary">

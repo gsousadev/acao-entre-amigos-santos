@@ -3,8 +3,8 @@
 @include('components.navbar')
 
 <header class="masthead bg-primary text-white text-center">
-    <div class="container-fluid m-0 px-0 pt-5 d-flex align-items-center flex-column">
-        <img class="w-100 mx-auto" src="images/banner_background.jpeg" alt="..."/>
+    <div class="container-fluid m-0 px-1 py-5 d-flex align-items-center flex-column bg-white">
+        <img class="w-50 mx-auto" src="images/logo_radio.png" alt="..."/>
     </div>
 </header>
 
@@ -26,16 +26,17 @@
                     <div class="col-12 col-lg-6 align-self-center">
                         <p class="lh-lg fs-4">
                             A "Ação entre Amigos" tem como objetivo arrecadar fundos para a manutenção e reparos da
-                            rádio. O valor de cada nome será de <strong>R$ 30,00.</strong>
+                            rádio. O valor de cada nome será de <strong>R$ 30,00. </strong>
                         </p>
 
                         <p class="lh-lg fs-4">
                             Ao adquirir um nome você contribui com a obra
-                            de evangelização da diocese, realizada por meio da Rádio Católica de Osasco.
+                            de evangelização da diocese, realizada por meio da Rádio Católica de Osasco e
+                            concorre aos dois prêmios.
                         </p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <img class="w-100 mx-auto rounded" src="images/drive_thru.png" alt="..."/>
+                        <img class="w-100 mx-auto rounded" src="images/computador_radio.jpg"/>
                     </div>
                     <div class="col-12 mt-5 text-center">
                         <p class="lh-lg h1 bg-white text-primary">O sorteio será no dia 30 de outubro, às 10h</p>
@@ -68,7 +69,7 @@
                     1 imagem fac-simile de Nossa Senhora Aparecida (35cm aproximadamente)
                 </p>
                 <div class="mt-4">
-                    <a class="btn btn-xl btn-primary" href="#rifa">
+                    <a class="btn btn-xl btn-primary" href="#comprar">
                         <i class="fas fa-arrow-down"> me-2</i>
                         Quero Concorrer
                     </a>
@@ -101,8 +102,7 @@
 <section class="page-section mb-0 bg-primary text-white" id="como-participar">
     <div class="container">
         <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-white text-uppercase text-secondary">Como participar do
-            chá?</h2>
+        <h2 class="page-section-heading text-center text-white text-uppercase text-secondary">Como participar</h2>
         <!-- Icon Divider-->
         <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
@@ -112,27 +112,24 @@
 
         <!-- About Section Content-->
         <div class="row justify-content-center  my-5">
-            <div class="col-lg-6">
-                <img class="w-100 mx-auto rounded" src="images/rifa_dos_santos.png" alt="..."/>
-            </div>
-            <div class="col-lg-6  align-self-center">
-                <h3 class="my-3">Rifa dos Santos</h3>
 
-                <h4> Passo 1 </h4>
-                <p>
-                    Escolha Santo que prefirir disponível na lista de santos </p>
-                <h4> Passo 2 </h4>
-                <p>
+            <div class="col-lg-10  align-self-center text-center">
+
+                <h3 class="passo-titulo"> Passo 1 </h3>
+                <p class="passo-texto">
+                    Escolha Santo que prefirir disponível na lista de santos. Na escolha de um santo você já esta
+                    concorrendo aos dois prêmios. </p>
+                <h3 class="passo-titulo"> Passo 2 </h3>
+                <p class="passo-texto">
                     Nos informe seu nome e seu número de celular (de preferência whatsapp), para que
-                    possamos entrar
-                    em contado com você caso seja o grande premiado!</p>
-                <h4> Passo 3 </h4>
-                <p>Confirme as informações para o sorteio e efetue o pagamento via PIX, através do QRCode. </br>
-                    <strong class="text-danger bg-white"> Envie o comprovante de pagamento para o whatsapp (11)
-                        94005-3900</strong>
-                </p>
+                    possamos entrar em contado com você caso seja o grande premiado.</p>
+                <h3 class="passo-titulo"> Passo 3 </h3>
+                <p class="passo-texto">Confirme as informações para o sorteio e efetue o pagamento via PIX, através do QRCode. </p>
+                <p class="passo-texto d-none"><strong class="text-danger p-3 m bg-white"> Envie o comprovante de
+                        pagamento para o whatsapp (11)
+                        94005-3900</strong> </p>
                 <div class="mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="#rifa">
+                    <a class="btn btn-xl btn-outline-light" href="#comprar">
                         <i class="fas fa-arrow-down"> me-2</i>
                         Escolher o Santo
                     </a>
@@ -143,10 +140,10 @@
 
 </section>
 
-<section class="page-section mb-0" id="rifa">
+<section class="page-section mb-0" id="comprar">
     <div class="container">
         <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase">Rifa</h2>
+        <h2 class="page-section-heading text-center text-uppercase">Comprar</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>

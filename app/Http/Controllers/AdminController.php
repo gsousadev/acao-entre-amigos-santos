@@ -25,14 +25,13 @@ class AdminController extends Controller
         }
 
         $rifas = Rifa::query()->with(['santo'])->get();
-        $mensagens = Mensagem::all()->toArray();
 
         $ultimoSorteio = Sorteio::query()
         ->with('rifa')
         ->orderByDesc('id')
         ->first();
 
-        $ultimoSorteio = $ultimoSorteio instanceof Sorteio ? 
+        $ultimoSorteio = $ultimoSorteio instanceof Sorteio ?
         $ultimoSorteio->rifa->load('santo')->toArray() : [];
 
         $logPath = storage_path().'/logs/laravel.log';
@@ -41,7 +40,6 @@ class AdminController extends Controller
 
         return view('admin', [
             'rifas' => $rifas,
-            'mensagens' => $mensagens,
             'ultimoSorteio' => $ultimoSorteio,
             'logs' => $logs
         ]);

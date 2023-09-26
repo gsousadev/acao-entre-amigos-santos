@@ -10978,12 +10978,8 @@ html {
   width: 15rem;
 }
 
-@media (min-width: 1336px) {
-  .masthead {
-    background-size: 120%;
-     background-position-x: 80%;
-     background-position-y: 90%;
-   }
+.masthead {
+    padding: 100px 0;
 }
 
 @media (min-width: 992px) {
