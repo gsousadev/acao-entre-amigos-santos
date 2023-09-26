@@ -111,7 +111,7 @@
                     possamos entrar em contado com você caso seja o grande premiado.</p>
                 <h3 class="passo-titulo"> Passo 3 </h3>
                 <p class="passo-texto">Confirme as informações para o sorteio e efetue o pagamento, através do QRCode ou chave PIX.</p>
-                <p class="passo-texto"><strong class="text-danger p-3 m bg-white"> Envie o comprovante de
+                <p class="passo-texto"><strong class="text-danger p-3 m bg-white">Importante: Envie o comprovante de
                         pagamento para o whatsapp (11) 94005-3900</strong> </p>
                 <div class="mt-4">
                     <a class="btn btn-xl btn-outline-light" href="#comprar">

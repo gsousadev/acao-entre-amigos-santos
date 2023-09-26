@@ -15,8 +15,11 @@ class SantoSeeder extends Seeder
 
         $santos = json_decode(file_get_contents("./informacoes_santos.json"));
 
+
+
+
         foreach ($santos as $santo) {
-            DB::table('santos')->insert([
+            DB::table('santos')->insertOrIgnore([
                 'nome' => data_get($santo, 'nome'),
                 'slug' => data_get($santo, 'slug'),
                 'imagem' => data_get($santo, 'imagem')
