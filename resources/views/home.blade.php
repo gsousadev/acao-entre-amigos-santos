@@ -39,8 +39,7 @@
                         <img class="w-100 mx-auto rounded" src="images/computador_radio.jpg"/>
                     </div>
                     <div class="col-12 mt-5 text-center">
-                        <p class="lh-lg h1 bg-white text-primary">O sorteio será no dia 30 de outubro, às 10h</p>
-                        <p class="lh-lg fs-4">No programa "Não Deixe de Sonhar"</p>
+                        <p class="lh-lg h1 bg-white text-primary">O sorteio será no dia 30 de outubro, às 10h, </br>no programa "Não Deixe de Sonhar"</p>
                     </div>
                 </div>
             </div>
@@ -69,7 +68,7 @@
                     1 imagem fac-simile de Nossa Senhora Aparecida (35cm aproximadamente)
                 </p>
                 <div class="mt-4">
-                    <a class="btn btn-xl btn-primary" href="#comprar">
+                    <a class="btn btn-xl btn-primary" href="#como-participar">
                         <i class="fas fa-arrow-down"> me-2</i>
                         Quero Concorrer
                     </a>
@@ -85,9 +84,9 @@
                     1 quadro de São Francisco de Assis pintado à mão (120cm X 90 cm)
                 </p>
                 <div class="mt-4">
-                    <a class="btn btn-xl btn-primary" href="#rifa">
+                    <a class="btn btn-xl btn-primary" href="#como-participar">
                         <i class="fas fa-arrow-down"> me-2</i>
-                        Quero Concorrer
+                        Quero Participar
                     </a>
                 </div>
             </div>
@@ -117,14 +116,14 @@
 
                 <h3 class="passo-titulo"> Passo 1 </h3>
                 <p class="passo-texto">
-                    Escolha Santo que prefirir disponível na lista de santos. Na escolha de um santo você já esta
+                    Escolha Santo que preferir disponível na lista de santos. Na escolha de um santo você já está
                     concorrendo aos dois prêmios. </p>
                 <h3 class="passo-titulo"> Passo 2 </h3>
                 <p class="passo-texto">
                     Nos informe seu nome e seu número de celular (de preferência whatsapp), para que
                     possamos entrar em contado com você caso seja o grande premiado.</p>
                 <h3 class="passo-titulo"> Passo 3 </h3>
-                <p class="passo-texto">Confirme as informações para o sorteio e efetue o pagamento via PIX, através do QRCode. </p>
+                <p class="passo-texto">Confirme as informações para o sorteio e efetue o pagamento, através do QRCode ou chave  PIX.</p>
                 <p class="passo-texto d-none"><strong class="text-danger p-3 m bg-white"> Envie o comprovante de
                         pagamento para o whatsapp (11)
                         94005-3900</strong> </p>
@@ -211,7 +210,7 @@
                         <h3 class="my-5">
                             Passo 3: Confirme as Informações
                         </h3>
-                        <h5 class="text-danger"> OBS: Não esqueça de finalizar seu cadastro da rifa no botão rosa!</h5>
+                        <h5 class="text-danger"> OBS: Não esqueça de finalizar seu cadastro da rifa no botão "Finalizar Participação"!</h5>
                     </div>
 
                     <div class="row justify-content-center align-items-center" id="confirmacao-texto-dinheiro">
