@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
  * @property string $email_convidado
  * @property string $telefone_convidado
  */
-class Rifa extends Model
+class Bilhete extends Model
 {
     const UPDATED_AT = null;
     use HasFactory;

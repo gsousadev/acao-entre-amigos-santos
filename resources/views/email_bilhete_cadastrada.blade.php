@@ -174,7 +174,7 @@
                                                                     align="center">
                                                                     <h1> Ação entre amigos - Rádio Católica de
                                                                         Osasco</h1>
-                                                                    <img style="width:300px;margin:0 auto;display:block;" src="https://chafraldasdulce.up.railway.app/images/rifa_dos_santos.png" alt="..." />
+                                                                    <img style="width:300px;margin:0 auto;display:block;" src="https://chafraldasdulce.up.railway.app/images/bilhete_dos_santos.png" alt="..." />
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -250,19 +250,19 @@
                                                                         <tbody>
                                                                             <tr>
                                                                                 <th>Número do bilhete</th>
-                                                                                <td  style="min-width: 250px">{{ data_get($rifa, 'id', '-') }}</td>
+                                                                                <td  style="min-width: 250px">{{ data_get($bilhete, 'id', '-') }}</td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <th>Nome</th>
-                                                                                <td>{{ data_get($rifa, 'nome_convidado', '-') }}</td>
+                                                                                <td>{{ data_get($bilhete, 'nome_convidado', '-') }}</td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <th>Nome do Santo</th>
-                                                                                <td>{{ data_get($rifa, 'santo.nome', '-') }}</td>
+                                                                                <td>{{ data_get($bilhete, 'santo.nome', '-') }}</td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <th>Data da Compra</th>
-                                                                                <td>{{ data_get($rifa, 'created_at', '-') }}</td>
+                                                                                <td>{{ data_get($bilhete, 'created_at', '-') }}</td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <td style="line-height: 16px; font-size: 16px; width: 100%; height: 16px; margin: 0;"

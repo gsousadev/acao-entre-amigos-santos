@@ -26,8 +26,8 @@ class Sorteio extends Model
         );
     }
 
-    public function rifa(): BelongsTo
+    public function bilhete(): BelongsTo
     {
-        return $this->belongsTo(Rifa::class);
+        return $this->belongsTo(Bilhete::class);
     }
 }

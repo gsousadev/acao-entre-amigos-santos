@@ -8,7 +8,7 @@
         <div class="confirmacao-texto-final text-center col-xl-6 col-lg-8 col-md-10 col-12">
             @if ($sucesso)
                 <h1>Agradecemos desde já sua participação!</h1>
-                <h2>Enviamos um email de confirmação para você! Se não o encontrar tente buscar na caixa de span!</h2>
+                <h2>    </h2>
             @else
                 <h1>Infelizmente ocorreu um problema ao fazer a compra do seu bilhete!</h1>
                 <h2>Tente Novamente. Se não conseguir, entre em contato conosco para entendermos o que pode ter

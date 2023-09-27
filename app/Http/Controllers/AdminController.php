@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mensagem;
-use App\Models\Rifa;
+use App\Models\Bilhete;
 use App\Models\Sorteio;
+use App\Services\SorteioService;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Validation\UnauthorizedException;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,6 +14,9 @@ use Throwable;
 
 class AdminController extends Controller
 {
+
+    public function __construct(private SorteioService $sorteioService){
+    }
 
     public function loginView(Request $request)
     {
@@ -24,23 +29,22 @@ class AdminController extends Controller
             return redirect()->route('loginView');
         }
 
-        $rifas = Rifa::query()->with(['santo'])->get();
+        $bilhetes = Bilhete::query()->with(['santo'])->get();
 
-        $ultimoSorteio = Sorteio::query()
-        ->with('rifa')
+        $sorteios = Sorteio::query()
+        ->with('bilhete.santo')
         ->orderByDesc('id')
-        ->first();
-
-        $ultimoSorteio = $ultimoSorteio instanceof Sorteio ?
-        $ultimoSorteio->rifa->load('santo')->toArray() : [];
+        ->get();        
 
         $logPath = storage_path().'/logs/laravel.log';
         $logs = fopen($logPath , "r") or die("Unable to open file!");
         $logs = explode("\n",stream_get_contents($logs));
 
         return view('admin', [
-            'rifas' => $rifas,
-            'ultimoSorteio' => $ultimoSorteio,
+            'bilhetes' => $bilhetes,
+            'sorteios' => $sorteios,
+            'novoSorteioDisponivel' => $this->sorteioService->buscarBilhetesDisponiveisSorteio()->isNotEmpty(),
+            
             'logs' => $logs
         ]);
     }

@@ -2,7 +2,7 @@
 
 namespace App\Mail;
 
-use App\Models\Rifa;
+use App\Models\Bilhete;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -11,14 +11,14 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class RifaCadastrada extends Mailable
+class BilheteCadastrada extends Mailable
 {
     use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
      */
-    public function __construct(private Rifa $rifa)
+    public function __construct(private Bilhete $bilhete)
     {
        
     }
@@ -30,7 +30,7 @@ class RifaCadastrada extends Mailable
     {
         return new Envelope(
             from: new Address('guiedson1@gmail.com', 'Guilherme Santos'),
-            subject: 'Chá da Dulce - Rifa Comprada',
+            subject: 'Chá da Dulce - Bilhete Comprada',
         );
     }
 
@@ -40,8 +40,8 @@ class RifaCadastrada extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'email_rifa_cadastrada',
-            with:['rifa' => $this->rifa->toArray()]
+            view: 'email_bilhete_cadastrada',
+            with:['bilhete' => $this->bilhete->toArray()]
         );
     }
 

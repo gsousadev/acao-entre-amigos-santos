@@ -11,8 +11,8 @@ class Santo extends Model
     use HasFactory;
 
 
-    public function rifa(): HasOne
+    public function bilhete(): HasOne
     {
-        return $this->hasOne(Rifa::class);
+        return $this->hasOne(Bilhete::class);
     }
 }

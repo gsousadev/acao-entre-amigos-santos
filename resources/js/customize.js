@@ -15,12 +15,12 @@ $(function () {
         telefoneConvidado: null
     };
 
-    var valorMinimoRifa = 30;
+    var valorMinimoBilhete = 30;
 
     var iDsPassos = {
-        1: "passo-1-rifa-santos",
-        2: "passo-2-rifa-santos",
-        3: "passo-3-rifa-santos"
+        1: "passo-1-bilhete-santos",
+        2: "passo-2-bilhete-santos",
+        3: "passo-3-bilhete-santos"
     };
     var quantidadePassos = Object.keys(iDsPassos).length;
 
@@ -113,7 +113,7 @@ $(function () {
 
     $('#valor-presente-dinheiro').keyup(function () {
         formAttributes.valorDinheiro = $(this).val();
-        if (parseFloat($(this).val()) >= valorMinimoRifa) {
+        if (parseFloat($(this).val()) >= valorMinimoBilhete) {
 
         }
     });
@@ -192,7 +192,7 @@ $(function () {
                 }
             }
 
-            hideElement('.passo-rifa-santos');
+            hideElement('.passo-bilhete-santos');
             showFlexElement('#' + iDsPassos[proximoPasso]);
             passoAtualId = proximoPasso;
         }
@@ -205,7 +205,7 @@ $(function () {
         validarPasso2();
         fillFormInputs(formAttributes);
 
-        $("#formulario_rifa").trigger('submit');
+        $("#formulario_bilhete").trigger('submit');
     });
 
     $('#botao-passo-anterior').click(function () {
@@ -219,7 +219,7 @@ $(function () {
             showBlockElement('#botao-proximo-passo');
             hideElement('#botao-enviar-informacoes');
         }
-        hideElement('.passo-rifa-santos');
+        hideElement('.passo-bilhete-santos');
         showFlexElement('#' + iDsPassos[passoAtualId]);
     });
 });
@@ -277,7 +277,7 @@ function hoverAndSelectElements(element) {
 
         $(element).addClass('not_selected not_hovered').removeClass('selected hovered');
         $(this).removeClass('not_selected not_hovered').addClass('selected');
-        $('html,body').animate({ scrollTop: $('#botoes-rifa').offset().top - 200 }, 100);
+        $('html,body').animate({ scrollTop: $('#botoes-bilhete').offset().top - 200 }, 100);
     });
 
     $(element + ".selected").click(function () {

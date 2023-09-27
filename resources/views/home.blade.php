@@ -135,17 +135,17 @@
             <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
             <div class="divider-custom-line"></div>
         </div>
-        @if (!empty($rifaDosSantos) && empty($ultimoSorteio))
+        @if (!empty($bilheteDosSantos) && empty($ultimoSorteio))
             <!-- About Section Content-->
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10">
-                    <div class="row justify-content-center pb-5 passo-rifa-santos" id="passo-1-rifa-santos">
+                    <div class="row justify-content-center pb-5 passo-bilhete-santos" id="passo-1-bilhete-santos">
                         <div class="col-12 align-self-center">
                             <h3 class="my-5">
                                 Passo 1: Escolha um nome de Santo
                             </h3>
                         </div>
-                        @foreach ($rifaDosSantos as $santo)
+                        @foreach ($bilheteDosSantos as $santo)
                             <div class="col-6 col-md-4 col-lg-3 col-xl-2 justify-content-center mb-3">
                                 <div id="santo_{{ data_get($santo, 'slug') }}"
                                      data-santo-id={{ data_get($santo, 'slug') }}
@@ -164,13 +164,13 @@
                     </div>
                     @endforeach
                 </div>
-                <div class="row justify-content-center pb-5  d-none passo-rifa-santos" id="passo-2-rifa-santos">
+                <div class="row justify-content-center pb-5  d-none passo-bilhete-santos" id="passo-2-bilhete-santos">
                     <div class="col-12 align-self-center">
                         <h3 class="my-5">
                             Passo 2: Informe seu nome, telefone e email para comunicarmos sobre os vencedores
                         </h3>
                         <h5 class="text-danger"> OBS: Preencha as informações corretamente para receber a confirmação da
-                            participação da rifa no seu email</h5>
+                            participação da bilhete no seu email</h5>
                     </div>
                     <div class="col-12">
                         <div class="form-group ">
@@ -191,12 +191,12 @@
                     </div>
                 </div>
 
-                <div class="row justify-content-center pb-5 d-none passo-rifa-santos" id="passo-3-rifa-santos">
+                <div class="row justify-content-center pb-5 d-none passo-bilhete-santos" id="passo-3-bilhete-santos">
                     <div class="col-12 align-self-center">
                         <h3 class="my-5">
                             Passo 3: Confirme as Informações
                         </h3>
-                        <h5 class="text-danger"> OBS: Não esqueça de finalizar seu cadastro da rifa no botão "Finalizar Participação"!</h5>
+                        <h5 class="text-danger"> OBS: Não esqueça de finalizar seu cadastro da bilhete no botão "Finalizar Participação"!</h5>
                     </div>
 
                     <div class="row justify-content-center align-items-center" id="confirmacao-texto-dinheiro">
@@ -210,6 +210,9 @@
                                 <br/>
                                 Telefones: (11) 95239-8250 - Débora / (11) 98742-7398 - Guilherme
                             </p>
+
+                            <p class="passo-texto"><strong class="text-danger p-3 m bg-white">Importante: Envie o comprovante de
+                                pagamento para o whatsapp (11) 94005-3900</strong> </p>
 
                         </div>
                         <div class="col-12 col-lg-6">
@@ -241,7 +244,7 @@
                     </div>
                 </div>
 
-                <div class="row justify-content-between pb-5" id="botoes-rifa">
+                <div class="row justify-content-between pb-5" id="botoes-bilhete">
                     <div class="col-12 d-flex justify-content-center">
                         <button type="button" id="botao-passo-anterior"
                                 class="btn bg-dark text-white d-none w-50 mt-3 mx-1">
@@ -259,7 +262,7 @@
                     </div>
                 </div>
 
-                <form method="POST" action="/rifa" id="formulario_rifa">
+                <form method="POST" action="/bilhete" id="formulario_bilhete">
                     @csrf
                     <input id="santo_escolhido" name="santo_escolhido" type="hidden"/>
                     <input id="nome_convidado" name="nome_convidado" type="hidden"/>

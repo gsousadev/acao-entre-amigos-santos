@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mensagem;
-use App\Models\Rifa;
+use App\Models\Bilhete;
 use App\Models\Santo;
 use App\Models\Sorteio;
 use Illuminate\Database\Eloquent\Collection;
@@ -21,10 +21,10 @@ class HomeController extends Controller
     public function show()
     {
         try {
-            $rifas = Rifa::all();
+            $bilhetes = Bilhete::all();
 
             $dadosParaTela = [
-                'rifaDosSantos' => $this->buscarSantos($rifas),
+                'bilheteDosSantos' => $this->buscarSantos($bilhetes),
                 'ultimoSorteio' => $this->buscarUltimoSorteio(),
             ];
 
@@ -41,7 +41,7 @@ class HomeController extends Controller
             );
 
             $dadosParaTela = [
-                'rifaDosSantos' => [],
+                'bilheteDosSantos' => [],
                 'fraldas' => [],
                 'mensagens' => []
             ];
@@ -53,26 +53,26 @@ class HomeController extends Controller
     private function buscarUltimoSorteio(): array
     {
         $ultimoSorteio = Sorteio::query()
-        ->with('rifa')
+        ->with('bilhete')
         ->orderByDesc('id')
         ->first();
 
         $ultimoSorteio = $ultimoSorteio instanceof Sorteio ?
-        $ultimoSorteio->rifa->load('santo')->toArray() : [];
+        $ultimoSorteio->bilhete->load('santo')->toArray() : [];
 
         return $ultimoSorteio;
     }
 
-    private function buscarSantos(Collection $rifas): array
+    private function buscarSantos(Collection $bilhetes): array
     {
 
-        $rifas = Rifa::all()->toArray();
+        $bilhetes = Bilhete::all()->toArray();
         $santos = Santo::all()->toArray();
 
         foreach ($santos as &$santo) {
             $santo['escolhido'] = false;
-            foreach ($rifas as $rifa) {
-                if ($santo['id'] == $rifa['santo_id']) {
+            foreach ($bilhetes as $bilhete) {
+                if ($santo['id'] == $bilhete['santo_id']) {
                     $santo['escolhido'] = true;
                     break;
                 }

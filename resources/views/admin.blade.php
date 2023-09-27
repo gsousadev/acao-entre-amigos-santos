@@ -8,7 +8,7 @@
                     <a class="nav-link btn btn-primary text-white " href="#pagina-admin">Bilhetes</a>
                 </li>
                 <li class="nav-item h5 me-3">
-                    <a class="nav-link btn  btn-primary text-white" href="#sorteio-rifa">Sorteio</a>
+                    <a class="nav-link btn  btn-primary text-white" href="#sorteio-bilhete">Sorteio</a>
                 </li>
                 <li class="nav-item h5 me-3">
                     <a class="nav-link btn btn-primary text-white " href="/">Ir para o Site</a>
@@ -47,8 +47,8 @@
 </div>
 <div class="container-fluid" id="pagina-admin">
     <div class="row justify-content-center">
-        <div class="col-12 col-lg-10" id="rifas">
-            <h1> Bibletes </h1>
+        <div class="col-12 col-lg-10" id="bilhetes">
+            <h1> Bilhetes Vendidos</h1>
             <div class="table-responsive rounded">
                 <table
                     class="table table-striped
@@ -63,7 +63,7 @@
                             <th>Nome do Convidado</th>
                             <th>Email do Convidado</th>
                             <th>Telefone do Convidado</th>
-                            <th>Validada</th>
+                            <th>Bilhete Validado</th>
                             <th>Nome do Santo</th>
                             <th>Número do Santo</th>
                             <th>Data da Venda</th>
@@ -72,42 +72,42 @@
 
                     </thead>
                     <tbody class="table-group-divider">
-                        @foreach ($rifas as $rifa)
+                        @foreach ($bilhetes as $bilhete)
                             <tr>
-                                <td scope="row">{{ data_get($rifa, 'id', '-') }}</td>
-                                <td>{{ data_get($rifa, 'nome_convidado', '-') }}</td>
-                                <td>{{ data_get($rifa, 'email_convidado', '-') }}</td>
-                                <td>{{ data_get($rifa, 'telefone_convidado', '-') }}</td>
-                                <td>{{ data_get($rifa, 'validada') ? 'SIM' : 'NÃO' }}
+                                <td scope="row">{{ data_get($bilhete, 'id', '-') }}</td>
+                                <td>{{ data_get($bilhete, 'nome_convidado', '-') }}</td>
+                                <td>{{ data_get($bilhete, 'email_convidado', '-') }}</td>
+                                <td>{{ data_get($bilhete, 'telefone_convidado', '-') }}</td>
+                                <td>{{ data_get($bilhete, 'validada') ? 'SIM' : 'NÃO' }}
                                 </td>
-                                <td>{{ data_get($rifa, 'santo.nome', '-') }}</td>
-                                <td>{{ data_get($rifa, 'santo.id', '-') }}</td>
-                                <td>{{ data_get($rifa, 'created_at', '-') }}</td>
+                                <td>{{ data_get($bilhete, 'santo.nome', '-') }}</td>
+                                <td>{{ data_get($bilhete, 'santo.id', '-') }}</td>
+                                <td>{{ data_get($bilhete, 'created_at', '-') }}</td>
                                 <td>
-                                    <form action="/rifa/validar" method="post">
+                                    <form action="/bilhete/validar" method="post">
                                         @csrf
-                                        <input type="hidden" name="rifa" value="{{ data_get($rifa, 'id') }}">
+                                        <input type="hidden" name="bilhete" value="{{ data_get($bilhete, 'id') }}">
                                         <button type="submit" class="btn btn-success">Validar</button>
                                     </form>
                                 </td>
                                 <td>
-                                    <form action="/rifa/invalidar" method="post">
+                                    <form action="/bilhete/invalidar" method="post">
                                         @csrf
-                                        <input type="hidden" name="rifa" value="{{ data_get($rifa, 'id') }}">
+                                        <input type="hidden" name="bilhete" value="{{ data_get($bilhete, 'id') }}">
                                         <button type="submit" class="btn btn-warning">Invalidar</button>
                                     </form>
                                 </td>
                                 <td>
-                                    <form action="/rifa/deletar" method="post">
+                                    <form action="/bilhete/deletar" method="post">
                                         @csrf
-                                        <input type="hidden" name="rifa" value="{{ data_get($rifa, 'id') }}">
+                                        <input type="hidden" name="bilhete" value="{{ data_get($bilhete, 'id') }}">
                                         <button type="submit" class="btn btn-danger">Deletar</button>
                                     </form>
                                 </td>
                                 <td>
-                                    <form action="/rifa/reenviar-email" method="post">
+                                    <form action="/bilhete/reenviar-email" method="post">
                                         @csrf
-                                        <input type="hidden" name="rifa" value="{{ data_get($rifa, 'id') }}">
+                                        <input type="hidden" name="bilhete" value="{{ data_get($bilhete, 'id') }}">
                                         <button type="submit" class="btn btn-dark">Reenviar Email</button>
                                     </form>
                                 </td>
@@ -122,20 +122,24 @@
         </div>
     </div>
 
-    <div class="row justify-content-center my-5 pb-5" id="sorteio-rifa">
+    <div class="row justify-content-center my-5 pb-5" id="sorteio-bilhete">
         <div class="col-12 col-md-10 text-center">
-            <h1 class="py-2">Sorteio da Rifa dos Santos</h1>
+            <h1 class="py-2">Sorteio</h1>
 
-            <form action="/rifa/sortear" method="post">
+            @if($novoSorteioDisponivel)
+            <form action="/sorteio/sortear" method="post">
                 @csrf
-                <button type="submit" class="btn btn-primary w-100 py-3 my-3"><span
+                <input type="number" class="w-25 p-3 my-3" min=1 name="quantidade_numeros_sorteio" id="quantidade_numeros_sorteio" placeholder="Quantidade de Números para Sorteio"/>
+
+                <button type="submit" class="btn btn-primary w-25 py-3 my-3"><span
                         class='h3'>SORTEAR</span></button>
             </form>
-            @if (!empty($ultimoSorteio))
+            @endif
+            @if ($sorteios->isNotEmpty())
                 <form action="/sorteio/limpar" method="post">
                     @csrf
                     <button type="submit" class="btn btn-dark w-100 py-3 my-3"><span class='h3'>LIMPAR
-                            SORTEIOS</span></button>
+                            TODOS SORTEIOS</span></button>
                 </form>
             @endif
 

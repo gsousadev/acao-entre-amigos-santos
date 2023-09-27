@@ -3,7 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MensagemController;
-use App\Http\Controllers\RifaController;
+use App\Http\Controllers\BilheteController;
 use App\Http\Controllers\SorteioController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,13 +20,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'show']);
 
-Route::post('/rifa', [RifaController::class, 'create']);
-Route::post('/rifa/validar', [RifaController::class, 'markValidateTrue']);
-Route::post('/rifa/invalidar', [RifaController::class, 'markValidateFalse']);
-Route::post('/rifa/deletar', [RifaController::class, 'delete']);
-Route::post('/rifa/reenviar-email', [RifaController::class, 'reenviarEmail']);
-Route::post('/rifa/sortear', [RifaController::class, 'raffle']);
-
+Route::post('/bilhete', [BilheteController::class, 'create']);
+Route::post('/bilhete/validar', [BilheteController::class, 'markValidateTrue']);
+Route::post('/bilhete/invalidar', [BilheteController::class, 'markValidateFalse']);
+Route::post('/bilhete/deletar', [BilheteController::class, 'delete']);
+Route::post('/bilhete/reenviar-email', [BilheteController::class, 'reenviarEmail']);
+Route::post('/sorteio/sortear', [SorteioController::class, 'raffle']);
 Route::post('/sorteio/limpar', [SorteioController::class, 'limpar']);
 
 
@@ -36,9 +35,9 @@ Route::post('/login', [AdminController::class, 'loginPerform'])->name('loginPerf
 Route::get('/admin', [AdminController::class, 'adminView']);
 Route::get('/logout', [AdminController::class, 'logout']);
 
-Route::get('/email_rifa', function(){
-    return view('email_rifa_cadastrada', [
-        'rifa' => [
+Route::get('/email_bilhete', function(){
+    return view('email_bilhete_cadastrada', [
+        'bilhete' => [
            'id' => '1',
             'nome_convidado' => 'Guilherme Santos',
             'email_convidado' => 'guilherme.santos@email.com',
