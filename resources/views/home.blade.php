@@ -167,10 +167,8 @@
                 <div class="row justify-content-center pb-5  d-none passo-bilhete-santos" id="passo-2-bilhete-santos">
                     <div class="col-12 align-self-center">
                         <h3 class="my-5">
-                            Passo 2: Informe seu nome, telefone e email para comunicarmos sobre os vencedores
+                            Passo 2: Informe seu nome e telefone
                         </h3>
-                        <h5 class="text-danger"> OBS: Preencha as informações corretamente para receber a confirmação da
-                            participação da bilhete no seu email</h5>
                     </div>
                     <div class="col-12">
                         <div class="form-group ">
@@ -179,14 +177,9 @@
                                    class="form-control dados-convidado">
                         </div>
                         <div class="form-group mt-3">
-                            <label for="email-convidado">Informe seu email</label>
-                            <input name="email_convidado" type="email" id="email-convidado"
-                                   class="form-control dados-convidado">
-                        </div>
-                        <div class="form-group mt-3">
                             <label for="telefone-convidado">Informe seu telefone</label>
                             <input name="telefone_convidado" typé="text" id="telefone-convidado"
-                                   class="form-control dados-convidado">
+                                   class="form-control dados-convidado telefone-mask">
                         </div>
                     </div>
                 </div>
@@ -205,7 +198,7 @@
                             <h4> Page pela chave PIX: <i>COLOCAR CHAVE PIX AQUI</i></h4>
                             <h4> Ou se preferir leia o QRCode ao lado ... </h4>
 
-                            <p class="passo-texto"><strong class="text-danger p-3 m bg-white">Importante: Envie o comprovante de
+                            <p><strong class="text-danger">Importante: Envie o comprovante de
                                 pagamento para o whatsapp (11) 94005-3900</strong> </p>
 
                         </div>
@@ -225,13 +218,9 @@
                                 <td class='key'>Seu nome</td>
                                 <td class='value'></td>
                             </tr>
-                            <tr id='linha-email-convidado'>
-                                <td class='key'>Seu email</td>
-                                <td class='value'></td>
-                            </tr>
                             <tr id='linha-telefone-convidado'>
                                 <td class='key'>Seu telefone</td>
-                                <td class='value'></td>
+                                <td class='value telefone-mask'></td>
                             </tr>
                         </table>
 
@@ -260,7 +249,6 @@
                     @csrf
                     <input id="santo_escolhido" name="santo_escolhido" type="hidden"/>
                     <input id="nome_convidado" name="nome_convidado" type="hidden"/>
-                    <input id="email_convidado" name="email_convidado" type="hidden"/>
                     <input id="telefone_convidado" name="telefone_convidado" type="hidden"/>
                 </form>
 

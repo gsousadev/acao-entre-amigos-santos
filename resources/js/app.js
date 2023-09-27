@@ -1,6 +1,7 @@
 import './bootstrap';
 import '../css/app.css';
-import './customize';
+import 'jquery-mask-plugin';
+import './customize'; 
 import '../css/customize.css';
 
 

@@ -61,13 +61,12 @@
                         <tr>
                             <th>#ID</th>
                             <th>Nome do Convidado</th>
-                            <th>Email do Convidado</th>
                             <th>Telefone do Convidado</th>
                             <th>Bilhete Validado</th>
                             <th>Nome do Santo</th>
                             <th>Número do Santo</th>
                             <th>Data da Venda</th>
-                            <th colspan="4">Ações</th>
+                            <th colspan="3">Ações</th>
                         </tr>
 
                     </thead>
@@ -76,8 +75,7 @@
                             <tr>
                                 <td scope="row">{{ data_get($bilhete, 'id', '-') }}</td>
                                 <td>{{ data_get($bilhete, 'nome_convidado', '-') }}</td>
-                                <td>{{ data_get($bilhete, 'email_convidado', '-') }}</td>
-                                <td>{{ data_get($bilhete, 'telefone_convidado', '-') }}</td>
+                                <td class="telefone-mask">{{ data_get($bilhete, 'telefone_convidado', '-') }}</td>
                                 <td>{{ data_get($bilhete, 'validada') ? 'SIM' : 'NÃO' }}
                                 </td>
                                 <td>{{ data_get($bilhete, 'santo.nome', '-') }}</td>
@@ -102,13 +100,6 @@
                                         @csrf
                                         <input type="hidden" name="bilhete" value="{{ data_get($bilhete, 'id') }}">
                                         <button type="submit" class="btn btn-danger">Deletar</button>
-                                    </form>
-                                </td>
-                                <td>
-                                    <form action="/bilhete/reenviar-email" method="post">
-                                        @csrf
-                                        <input type="hidden" name="bilhete" value="{{ data_get($bilhete, 'id') }}">
-                                        <button type="submit" class="btn btn-dark">Reenviar Email</button>
                                     </form>
                                 </td>
                             </tr>

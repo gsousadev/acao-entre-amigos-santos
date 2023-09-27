@@ -22,16 +22,13 @@ class BilheteController extends Controller
             $bilhete = new Bilhete();
 
             $bilhete->nome_convidado = (string)$request->get('nome_convidado');
-            $bilhete->email_convidado = (string)trim($request->get('email_convidado'));
             $bilhete->telefone_convidado = $this->limparTelefone(trim($request->get('telefone_convidado')));
 
             $santoEscolhido = Santo::query()->where('slug', $request->get('santo_escolhido'))->first();
 
             $santoEscolhido->bilhete()->save($bilhete);
 
-            $this->enviarEmailConfirmacao($bilhete->id);
-
-            return view('retorno_bilhete', ['sucesso' => true]);
+            return view('retorno_bilhete', ['sucesso' => true, 'bilhete' => $bilhete, 'santo' => $santoEscolhido]);
         } catch (Throwable $e) {
 
             Log::error(
@@ -53,40 +50,6 @@ class BilheteController extends Controller
         return (string) preg_replace("/[^0-9]/", "", $telefone);
     }
 
-    private function enviarEmailConfirmacao(int $bilheteId)
-    {
-
-        $bilhete = Bilhete::query()->where('id', $bilheteId)->with('santo')->first();
-
-        if ($bilhete instanceof Bilhete) {
-            Mail::to($bilhete->email_convidado)->send(new BilheteCadastrada($bilhete));
-        } else {
-            throw new ModelNotFoundException('Bilhete não Localizada para envio de email');
-        }
-    }
-
-    public function reenviarEmail(Request $request)
-    {
-        try {
-            $id = $request->get('bilhete');
-            $this->enviarEmailConfirmacao($id);
-
-            return redirect('/admin')->with(['mensagem_alerta' => ['mensagem' => "Email de Bilhete $id reenviado", 'tipo' => "success"]]);
-        } catch (Throwable $e) {
-            Log::error(
-                "ERRO_REENVIO_RIFA",
-                [
-                    'exception_message' => $e->getMessage(),
-                    'exception_code' => $e->getCode(),
-                    'exception_file' => $e->getFile(),
-                    'exception_line' => $e->getLine(),
-                    'exception_trace' => $e->getTraceAsString()
-                ]
-            );
-
-            return redirect('/admin')->with(['mensagem_alerta' => ['mensagem' => "Erro no reenvio do email da Bilhete $id", 'tipo' => "danger"]]);
-        }
-    }
 
     public function markValidateTrue(Request $request)
     {
@@ -114,5 +77,4 @@ class BilheteController extends Controller
         Bilhete::find($id)->delete();
         return redirect('/admin')->with(['mensagem_alerta' => ['mensagem' => "Bilhete $id deletada", 'tipo' => "danger"]]);
     }
-
 }

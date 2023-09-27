@@ -6,8 +6,6 @@ use App\Models\Bilhete;
 use App\Models\Sorteio;
 use App\Services\SorteioService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Log;
 
 class SorteioController extends Controller
 {

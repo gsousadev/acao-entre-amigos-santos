@@ -1,7 +1,5 @@
 import $, { isNumeric } from "jquery";
 
-
-
 $(function () {
 
     var formAttributes = {
@@ -11,7 +9,6 @@ $(function () {
         valorDinheiro: null,
         tamanhoFralda: null,
         nomeConvidado: null,
-        emailConvidado: null,
         telefoneConvidado: null
     };
 
@@ -48,18 +45,11 @@ $(function () {
     }
 
     function validarPasso2() {
+
+        formAttributes.telefoneConvidado = formAttributes.telefoneConvidado.replace(/[^\d]+/g, '');
+
         if (!formAttributes.nomeConvidado) {
             alert('Erro: Informe seu nome');
-            return false;
-        }
-
-        if (!formAttributes.emailConvidado) {
-            alert('Erro: Informe seu email');
-            return false;
-        }
-
-        if (!validateEmail(formAttributes.emailConvidado)) {
-            alert('Erro: Email Inválido');
             return false;
         }
 
@@ -81,11 +71,6 @@ $(function () {
         return regex.test(phone)
     }
 
-
-    function validateEmail(inputText) {
-        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        return inputText.match(mailformat);
-    }
 
     // PASSO 1
     hoverAndSelectElements('.box-santo.livre')
@@ -149,9 +134,6 @@ $(function () {
         formAttributes.nomeConvidado = $(this).val();
     });
 
-    $('#email-convidado').keyup(function () {
-        formAttributes.emailConvidado = $(this).val();
-    });
 
     $('#telefone-convidado').keyup(function () {
         formAttributes.telefoneConvidado = $(this).val();
@@ -201,6 +183,7 @@ $(function () {
 
 
     $('#botao-enviar-informacoes').click(function () {
+
         validarPasso1();
         validarPasso2();
         fillFormInputs(formAttributes);
@@ -222,6 +205,8 @@ $(function () {
         hideElement('.passo-bilhete-santos');
         showFlexElement('#' + iDsPassos[passoAtualId]);
     });
+
+    $('.telefone-mask').mask('(00) 00009-0000');
 });
 
 
@@ -231,7 +216,6 @@ function fillInfoConfirmation(formAttributes) {
     $('#linha-valor-dinheiro .value').html("").append(formAttributes.valorDinheiro);
     $('#linha-tamanho-fralda .value').html("").append(formAttributes.tamanhoFralda);
     $('#linha-nome-convidado .value').html("").append(formAttributes.nomeConvidado);
-    $('#linha-email-convidado .value').html("").append(formAttributes.emailConvidado);
     $('#linha-telefone-convidado .value').html("").append(formAttributes.telefoneConvidado);
     $('#confirmacao-texto-dinheiro #valor-dinheiro').html("").append(formAttributes.valorDinheiro);
 
@@ -241,7 +225,6 @@ function fillInfoConfirmation(formAttributes) {
 function fillFormInputs(formAttributes) {
     $("#santo_escolhido").val(formAttributes.santoId);
     $("#nome_convidado").val(formAttributes.nomeConvidado);
-    $("#email_convidado").val(formAttributes.emailConvidado);
     $("#telefone_convidado").val(formAttributes.telefoneConvidado);
 }
 
@@ -285,3 +268,4 @@ function hoverAndSelectElements(element) {
     });
 
 }
+

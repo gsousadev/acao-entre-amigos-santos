@@ -14,7 +14,6 @@ use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
 /**
  * @property string $id
  * @property string $nome_convidado
- * @property string $email_convidado
  * @property string $telefone_convidado
  */
 class Bilhete extends Model
