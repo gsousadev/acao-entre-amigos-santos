@@ -216,7 +216,7 @@ function fillInfoConfirmation(formAttributes) {
     $('#linha-valor-dinheiro .value').html("").append(formAttributes.valorDinheiro);
     $('#linha-tamanho-fralda .value').html("").append(formAttributes.tamanhoFralda);
     $('#linha-nome-convidado .value').html("").append(formAttributes.nomeConvidado);
-    $('#linha-telefone-convidado .value').html("").append(formAttributes.telefoneConvidado);
+    $('#linha-telefone-convidado .value').html("").append(formAttributes.telefoneConvidado).mask('(00) 00009-0000');
     $('#confirmacao-texto-dinheiro #valor-dinheiro').html("").append(formAttributes.valorDinheiro);
 
 

@@ -12,6 +12,7 @@
                 <p><strong>Nome do Participante: </strong> {{$bilhete->nome_convidado}} </p>
                 <p><strong>Telefone do Participante: </strong> <span class="telefone-mask">{{$bilhete->telefone_convidado}}</span> </p>
                 <p><strong>Santo Escolhido: </strong> {{$santo->nome}} </p>
+                <p><strong>Data: </strong> {{$bilhete->created_at}} </p>
                 <p class="text-danger p-3 bg-white mt-3"><strong>Importante: Envie o comprovante de
                     pagamento para o whatsapp (11) 94005-3900</strong> </p>
             @else

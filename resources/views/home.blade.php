@@ -26,7 +26,7 @@
                     <div class="col-12 col-lg-6 align-self-center">
                         <p class="lh-lg fs-4">
                             A "Ação entre Amigos" tem como objetivo arrecadar fundos para a manutenção e reparos da
-                            rádio. O valor de cada nome será de <strong>R$ 30,00 , </strong> dando direito de concorrer aos dois prêmios
+                            rádio. O valor de cada nome será de <strong>R$ 30,00 , </strong> dando direito de concorrer aos dois prêmios.
                         </p>
                         <p class="lh-lg fs-4">
                             Ao adquirir um nome você contribui com a obra

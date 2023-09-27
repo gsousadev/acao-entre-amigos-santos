@@ -2,15 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Mensagem;
-use App\Models\Bilhete;
-use App\Models\Sorteio;
 use App\Services\SorteioService;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
-use Illuminate\Validation\UnauthorizedException;
-use Symfony\Component\HttpFoundation\Response;
-use Throwable;
 
 class AdminController extends Controller
 {
@@ -32,7 +25,6 @@ class AdminController extends Controller
         $bilhetesComprados = $this->sorteioService->buscarBilhetesComprados();
 
         $sorteiosRealizados = $this->sorteioService->buscarSorteiosRealizados();
-
 
         $logPath = storage_path().'/logs/laravel.log';
         $logs = fopen($logPath , "r") or die("Unable to open file!");

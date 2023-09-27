@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\BilheteCadastrada;
 use App\Models\Bilhete;
 use App\Models\Santo;
-use App\Models\Sorteio;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
 use Throwable;
 
 class BilheteController extends Controller
