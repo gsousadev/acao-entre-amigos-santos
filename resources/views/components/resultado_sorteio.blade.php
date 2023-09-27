@@ -1,4 +1,4 @@
-@if ($sorteios->isNotEmpty())
+@if (isset($sorteios) && $sorteios->isNotEmpty())
 @foreach($sorteios as $key => $sorteio)
 <div class="row text-white text-center my-3">
     <div class="col-12 col-md-2 py-5 bg-secondary">

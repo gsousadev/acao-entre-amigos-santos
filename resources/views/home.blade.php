@@ -135,7 +135,7 @@
             <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
             <div class="divider-custom-line"></div>
         </div>
-        @if (!empty($bilheteDosSantos) && empty($ultimoSorteio))
+        @if (!empty($bilheteDosSantos) && isset($sorteios) && !empty($sorteios) && $sorteios->isEmpty())
             <!-- About Section Content-->
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10">
@@ -202,14 +202,8 @@
                     <div class="row justify-content-center align-items-center" id="confirmacao-texto-dinheiro">
                         <div class="col-12 col-lg-6">
                             <h2 class="mb-5"> Dados de Pagamento</h2>
-                            <h4> Page pela chave PIX: <i>473.579.338-06</i></h4>
+                            <h4> Page pela chave PIX: <i>COLOCAR CHAVE PIX AQUI</i></h4>
                             <h4> Ou se preferir leia o QRCode ao lado ... </h4>
-
-                            <p class="text-danger">
-                                Se tiver algum problema com o pagamento entre em contato com a gente!
-                                <br/>
-                                Telefones: (11) 95239-8250 - Débora / (11) 98742-7398 - Guilherme
-                            </p>
 
                             <p class="passo-texto"><strong class="text-danger p-3 m bg-white">Importante: Envie o comprovante de
                                 pagamento para o whatsapp (11) 94005-3900</strong> </p>
@@ -271,11 +265,11 @@
                 </form>
 
             </div>
-        @elseif(!empty($ultimoSorteio))
+        @elseif(isset($sorteios) && !empty($sorteios) && $sorteios->isNotEmpty())
             <div class="row justify-content-center">
                 <div class="col-12">
                     <h3 class="my-5 text-center">
-                        SORTEIO DA RIFA FINALIZADO
+                        SORTEIO FINALIZADO
                     </h3>
 
                     @include('components.resultado_sorteio')

@@ -6,6 +6,7 @@ use App\Models\Mensagem;
 use App\Models\Bilhete;
 use App\Models\Santo;
 use App\Models\Sorteio;
+use App\Services\SorteioService;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Log;
 use Throwable;
@@ -18,6 +19,8 @@ class HomeController extends Controller
     const LIMITE_QTD_FRALDAS_M = 55;
     const LIMITE_QTD_FRALDAS_G = 17;
 
+    public function __construct(private SorteioService $sorteioService){}
+    
     public function show()
     {
         try {
@@ -25,7 +28,7 @@ class HomeController extends Controller
 
             $dadosParaTela = [
                 'bilheteDosSantos' => $this->buscarSantos($bilhetes),
-                'ultimoSorteio' => $this->buscarUltimoSorteio(),
+                'sorteios' => $this->sorteioService->buscarSorteiosRealizados()
             ];
 
             return view('home', $dadosParaTela);

@@ -6,13 +6,15 @@ use App\Models\Bilhete;
 use App\Models\Sorteio;
 use App\Services\SorteioService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
 
 class SorteioController extends Controller
 {
 
-   public function __construct(private SorteioService $sorteioService){
-   }
+    public function __construct(private SorteioService $sorteioService)
+    {
+    }
 
     public function limpar()
     {
@@ -26,17 +28,16 @@ class SorteioController extends Controller
         $quantidadeNumeros = $request->get('quantidade_numeros_sorteio');
         $bilhetesValidados = $this->sorteioService->buscarBilhetesDisponiveisSorteio();
 
-        if($quantidadeNumeros > $bilhetesValidados->count()){
-            return redirect('/admin')->with(['mensagem_alerta' => ['mensagem' => "Não há bilhetes validos disponíveis para esse sorteio", 'tipo' => "error"]]);
+        if ($quantidadeNumeros > $bilhetesValidados->count()) {
+            return redirect('/admin')->with(['mensagem_alerta' => ['mensagem' => "Não há bilhetes validos disponíveis para esse sorteio", 'tipo' => "danger"]]);
         }
 
+        $bilheteSorteados = $bilhetesValidados->shuffle()->random($quantidadeNumeros);
 
-        $bilheteSorteado = $bilhetesValidados->shuffle()->first();
-        $bilheteSorteado->sorteios()->save(new Sorteio());
-        $bilhetesValidados->forget($bilheteSorteado)
 
-        dd($bilheteSorteado, $bilhetesValidados);
-
+        $bilheteSorteados->each(function (Bilhete $bilheteSorteado) {
+            $bilheteSorteado->sorteios()->save(new Sorteio());
+        });
 
         return redirect('/admin')->with(['mensagem_alerta' => ['mensagem' => "Sorteio Realizado!", 'tipo' => "success"]]);
     }

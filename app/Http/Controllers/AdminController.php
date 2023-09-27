@@ -29,22 +29,18 @@ class AdminController extends Controller
             return redirect()->route('loginView');
         }
 
-        $bilhetes = Bilhete::query()->with(['santo'])->get();
+        $bilhetesComprados = $this->sorteioService->buscarBilhetesComprados();
 
-        $sorteios = Sorteio::query()
-        ->with('bilhete.santo')
-        ->orderByDesc('id')
-        ->get();        
+        $sorteiosRealizados = $this->sorteioService->buscarSorteiosRealizados();
+
 
         $logPath = storage_path().'/logs/laravel.log';
         $logs = fopen($logPath , "r") or die("Unable to open file!");
         $logs = explode("\n",stream_get_contents($logs));
 
         return view('admin', [
-            'bilhetes' => $bilhetes,
-            'sorteios' => $sorteios,
-            'novoSorteioDisponivel' => $this->sorteioService->buscarBilhetesDisponiveisSorteio()->isNotEmpty(),
-            
+            'bilhetes' => $bilhetesComprados,
+            'sorteios' => $sorteiosRealizados,
             'logs' => $logs
         ]);
     }

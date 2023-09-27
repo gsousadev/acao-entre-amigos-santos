@@ -126,51 +126,53 @@
         <div class="col-12 col-md-10 text-center">
             <h1 class="py-2">Sorteio</h1>
 
-            @if($novoSorteioDisponivel)
-            <form action="/sorteio/sortear" method="post">
-                @csrf
-                <input type="number" class="w-25 p-3 my-3" min=1 name="quantidade_numeros_sorteio" id="quantidade_numeros_sorteio" placeholder="Quantidade de Números para Sorteio"/>
+            @if (isset($sorteios) && !empty($sorteios) && $sorteios->isEmpty())
+                <form action="/sorteio/sortear" method="post">
+                    @csrf
+                    <input type="number" class="w-25 p-3 my-3" min=1 name="quantidade_numeros_sorteio"
+                        id="quantidade_numeros_sorteio" placeholder="Quantidade de Números para Sorteio" />
 
-                <button type="submit" class="btn btn-primary w-25 py-3 my-3"><span
-                        class='h3'>SORTEAR</span></button>
-            </form>
-            @endif
-            @if ($sorteios->isNotEmpty())
+                    <button type="submit" class="btn btn-primary w-25 py-3 my-3"><span
+                            class='h3'>SORTEAR</span></button>
+                </form>
+            @elseif(isset($sorteios) && !empty($sorteios) && $sorteios->isNotEmpty())
                 <form action="/sorteio/limpar" method="post">
                     @csrf
-                    <button type="submit" class="btn btn-dark w-100 py-3 my-3"><span class='h3'>LIMPAR
-                            TODOS SORTEIOS</span></button>
+                    <button type="submit" class="btn btn-dark w-100 py-3 my-3"><span class='h3'>LIMPAR SORTEIO</span></button>
                 </form>
+            @else
+                Erro em modulo de sorteio
             @endif
 
             @include('components.resultado_sorteio')
         </div>
 
     </div>
-        <div class="row justify-content-center my-5 pb-5" id="logs">
-            <div class="col-12 col-md-10">
-                <h1 class="py-2">Logs de Erro</h1>
-                <div class="table-responsive" style="max-height: 500px">
-                    <table class="table table-striped
+    <div class="row justify-content-center my-5 pb-5" id="logs">
+        <div class="col-12 col-md-10">
+            <h1 class="py-2">Logs de Erro</h1>
+            <div class="table-responsive" style="max-height: 500px">
+                <table
+                    class="table table-striped
                     table-hover
                     table-borderless
                     align-middle
                     table-primary">
-                        @if (!empty($logs))
-                            @foreach ($logs as $log)
-                                <tr>
-                                    <td scope="row"> {{ $log }} </td>
-                                </tr>
-                            @endforeach
-                        @endif
-                        </tbody>
-                    </table>
-                </div>
+                    @if (!empty($logs))
+                        @foreach ($logs as $log)
+                            <tr>
+                                <td scope="row"> {{ $log }} </td>
+                            </tr>
+                        @endforeach
+                    @endif
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+</div>
 
 
-    </body>
+</body>
 
-    </html>
+</html>
