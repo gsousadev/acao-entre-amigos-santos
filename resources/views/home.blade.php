@@ -195,15 +195,14 @@
                     <div class="row justify-content-center align-items-center" id="confirmacao-texto-dinheiro">
                         <div class="col-12 col-lg-6">
                             <h2 class="mb-5"> Dados de Pagamento</h2>
-                            <h4> Page pela chave PIX: <i>COLOCAR CHAVE PIX AQUI</i></h4>
-                            <h4> Ou se preferir leia o QRCode ao lado ... </h4>
+                            <h4> Page via PIX através do QRCode:</h4>
 
                             <p><strong class="text-danger">Importante: Envie o comprovante de
                                 pagamento para o whatsapp (11) 94005-3900</strong> </p>
 
                         </div>
                         <div class="col-12 col-lg-6">
-                            <img class="img-fluid" src="images/qrcode_pix.jpeg"/>
+                            <img class="img-fluid" src="images/qrcode_pix.png"/>
                         </div>
                     </div>
 
