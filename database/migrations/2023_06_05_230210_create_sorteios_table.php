@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sorteios', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('bilhete_id')->constrained();
+            $table->foreignId('bilhete_id')->constrained()->onDelete('cascade');
             $table->timestamp('created_at');
         });
     }
