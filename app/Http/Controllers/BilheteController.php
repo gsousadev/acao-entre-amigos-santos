@@ -20,11 +20,11 @@ class BilheteController extends Controller
 
             $santoEscolhido = Santo::query()
             ->where('slug', $request->get('santo_escolhido'))
-            ->whereDoesntHave('bilhete')
+            ->doesntHave('bilhete')
             ->first();
 
             if(!$santoEscolhido instanceof Santo){
-                throw new \Exception('Bilhete já comprado para o santo escolhido.')
+                throw new \Exception('Bilhete já comprado para o santo escolhido');
             }
 
             $santoEscolhido->bilhete()->save($bilhete);
