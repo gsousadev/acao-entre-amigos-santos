@@ -38,8 +38,7 @@ class BilheteController extends Controller
                     'exception_message' => $e->getMessage(),
                     'exception_code' => $e->getCode(),
                     'exception_file' => $e->getFile(),
-                    'exception_line' => $e->getLine(),
-                    'exception_trace' => $e->getTraceAsString()
+                    'exception_line' => $e->getLine()
                 ]
             );
 
