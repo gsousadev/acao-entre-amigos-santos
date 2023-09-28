@@ -12,15 +12,20 @@ class BilheteController extends Controller
 {
     public function create(Request $request)
     {
-
         try {
-
             $bilhete = new Bilhete();
 
             $bilhete->nome_convidado = (string)$request->get('nome_convidado');
             $bilhete->telefone_convidado = $this->limparTelefone(trim($request->get('telefone_convidado')));
 
-            $santoEscolhido = Santo::query()->where('slug', $request->get('santo_escolhido'))->first();
+            $santoEscolhido = Santo::query()
+            ->where('slug', $request->get('santo_escolhido'))
+            ->whereDoesntHave('bilhete')
+            ->first();
+
+            if(!$santoEscolhido instanceof Santo){
+                throw new \Exception('Bilhete já comprado para o santo escolhido.')
+            }
 
             $santoEscolhido->bilhete()->save($bilhete);
 
