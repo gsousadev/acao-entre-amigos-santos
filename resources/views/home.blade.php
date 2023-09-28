@@ -189,7 +189,7 @@
                         <h3 class="my-5">
                             Passo 3: Confirme as Informações
                         </h3>
-                        <h5 class="text-danger"> OBS: Não esqueça de finalizar seu cadastro da bilhete no botão "Finalizar Participação"!</h5>
+                        <h5 class="text-danger"> OBS: Não esqueça de finalizar sua compra no botão "Finalizar Compra"!</h5>
                     </div>
 
                     <div class="row justify-content-center align-items-center" id="confirmacao-texto-dinheiro">
@@ -239,7 +239,7 @@
 
                         <button type="button" id="botao-enviar-informacoes"
                                 class="btn bg-primary text-white d-none w-50 mt-3 mx-1">
-                            Finalizar Participação
+                            Finalizar Compra
                         </button>
                     </div>
                 </div>
