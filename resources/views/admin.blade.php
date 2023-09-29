@@ -118,9 +118,9 @@
             <h1 class="py-2">Sorteio</h1>
 
             @if (isset($sorteios) && !empty($sorteios) && $sorteios->isEmpty())
-                <form action="/sorteio/sortear" method="post">
+                <form action="/sorteio/sortear" method="post" id="sorteador">
                     @csrf
-                    <input type="number" class="w-25 p-3 my-3" min=1 name="quantidade_numeros_sorteio"
+                    <input type="number" class="w-25 p-3 my-3" min=1 required name="quantidade_numeros_sorteio"
                         id="quantidade_numeros_sorteio" placeholder="Quantidade de Números para Sorteio" />
 
                     <button type="submit" class="btn btn-primary w-25 py-3 my-3"><span

@@ -207,6 +207,19 @@ $(function () {
     });
 
     $('.telefone-mask').mask('(00) 00009-0000');
+
+
+    $('#sorteador').on('submit',function(){
+        var quantidadeNumerosEscolhida = $('#quantidade_numeros_sorteio').val();
+
+        if(quantidadeNumerosEscolhida < 1){
+            alert('Quantidade de números para sorteio inválida');
+            return false;
+        }
+
+        return true;
+    });
+
 });
 
 
