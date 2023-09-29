@@ -177,7 +177,7 @@
                                    class="form-control dados-convidado">
                         </div>
                         <div class="form-group mt-3">
-                            <label for="telefone-convidado">Informe seu telefone</label>
+                            <label for="telefone-convidado">Informe o seu whatsapp</label>
                             <input name="telefone_convidado" typé="text" id="telefone-convidado"
                                    class="form-control dados-convidado telefone-mask">
                         </div>
