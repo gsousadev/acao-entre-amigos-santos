@@ -110,7 +110,7 @@
                     Nos informe seu nome e seu número de celular (de preferência whatsapp), para que
                     possamos entrar em contado com você caso seja o grande premiado.</p>
                 <h3 class="passo-titulo"> Passo 3 </h3>
-                <p class="passo-texto">Confirme as informações para o sorteio e efetue o pagamento, através do QRCode ou chave PIX.</p>
+                <p class="passo-texto">Confirme as informações para o sorteio e efetue o pagamento, através do QRCode.</p>
                 <p class="passo-texto text-danger p-3 m bg-white"><strong>Importante: Envie o comprovante de
                         pagamento para o whatsapp (11) 94005-3900</strong> </p>
                 <div class="mt-4">
@@ -195,14 +195,14 @@
                     <div class="row justify-content-center align-items-center" id="confirmacao-texto-dinheiro">
                         <div class="col-12 col-lg-6">
                             <h2 class="mb-5"> Dados de Pagamento</h2>
-                            <h4> Page via PIX através do QRCode:</h4>
+                            <h4>Faça a leitura do QR Code para efetuar o pagamento</h4>
 
                             <p class="text-danger"><strong>Importante: Envie o comprovante de
                                 pagamento para o whatsapp (11) 94005-3900</strong></p>
 
                         </div>
                         <div class="col-12 col-lg-6">
-                            <img class="img-fluid" src="images/qrcode_pix.png"/>
+                            <img class="img-fluid d-block mx-auto p-3 m-3" id="qr-code-pagamento" src="images/qrcode_pix.png"/>
                         </div>
                     </div>
 

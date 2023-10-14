@@ -63,6 +63,12 @@
   padding-top: 150px;
 }
 
+#qr-code-pagamento{
+  border: 6px solid #000;
+  border-radius: 10px;
+  max-width: 350px;
+}
+
 .text-plus-1{
   font-size: 3rem;
 }
