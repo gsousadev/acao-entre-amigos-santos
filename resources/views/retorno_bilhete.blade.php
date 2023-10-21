@@ -14,7 +14,7 @@
                 <p><strong>Santo Escolhido: </strong> {{$santo->nome}} </p>
                 <p><strong>Data: </strong> {{$bilhete->created_at}} </p>
                 <p class="text-danger p-3 bg-white mt-3"><strong>Importante: Envie o comprovante de
-                    pagamento para o whatsapp (11) 94005-3900</strong> </p>
+                    pagamento PIX para o whatsapp (11) 94005-3900</strong> </p>
             @else
                 <h1>Infelizmente ocorreu um problema ao fazer a compra do seu bilhete!</h1>
                 <h2>Tente Novamente. Se não conseguir, entre em contato conosco no telefone (11) 94005-3900 para entendermos o que pode ter acontecido</h2>
