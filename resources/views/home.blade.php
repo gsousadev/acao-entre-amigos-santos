@@ -37,7 +37,7 @@
                         <img class="w-100 mx-auto rounded" src="images/computador_radio.jpg"/>
                     </div>
                     <div class="col-12 mt-5 text-center">
-                        <p class="lh-lg h1 bg-white text-primary">O sorteio será no dia 03 de novembro, ao meio-dia, no "Terço das Lágrimas de Nossa Senhora"</p>
+                        <p class="lh-lg h1 bg-white text-primary">O sorteio será no dia 01 de dezembro, ao meio-dia, no "Terço das Lágrimas de Nossa Senhora"</p>
                     </div>
                 </div>
             </div>
