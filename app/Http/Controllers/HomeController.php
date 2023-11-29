@@ -8,6 +8,7 @@ use App\Models\Santo;
 use App\Models\Sorteio;
 use App\Services\SorteioService;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Throwable;
 
@@ -21,8 +22,12 @@ class HomeController extends Controller
 
     public function __construct(private SorteioService $sorteioService){}
     
-    public function show()
+    public function show(Request $request)
     {
+        if (!$this->authValidate($request)) {
+            return redirect()->route('loginView');
+        }
+
         try {
             $bilhetes = Bilhete::all();
 

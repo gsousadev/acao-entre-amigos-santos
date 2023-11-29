@@ -11,11 +11,6 @@ class AdminController extends Controller
     public function __construct(private SorteioService $sorteioService){
     }
 
-    public function loginView(Request $request)
-    {
-        return $this->authValidate($request) ?  redirect('/admin') : view('login');
-    }
-
     public function adminView(Request $request)
     {
         if (!$this->authValidate($request)) {
@@ -35,34 +30,5 @@ class AdminController extends Controller
             'sorteios' => $sorteiosRealizados,
             'logs' => $logs
         ]);
-    }
-
-    public function loginPerform(Request $request)
-    {
-        $senhaValida = config('auth.senha_admin');
-
-        if ($senhaValida == $request->get('senha')) {
-            $request->session()->put('autorizado', true);
-            return redirect('/admin');
-        }
-
-        return redirect()->route('loginView')->with(['mensagem' => 'Senha Inválida']);
-    }
-
-    public function logout(Request $request)
-    {
-        $request->session()->invalidate();
-        $request->session()->regenerate();
-        $request->session()->regenerateToken();
-        return redirect()->route('loginView');
-    }
-
-    private function authValidate(Request $request)
-    {
-        if (!$request->session()->get('autorizado')) {
-            return false;
-        }
-
-        return true;
     }
 }

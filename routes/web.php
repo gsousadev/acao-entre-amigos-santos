@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MensagemController;
 use App\Http\Controllers\BilheteController;
@@ -29,7 +30,7 @@ Route::post('/sorteio/limpar', [SorteioController::class, 'limpar']);
 
 
 
-Route::get('/login', [AdminController::class, 'loginView'])->name('loginView');
-Route::post('/login', [AdminController::class, 'loginPerform'])->name('loginPerform');
+Route::get('/login', [Controller::class, 'loginView'])->name('loginView');
+Route::post('/login', [Controller::class, 'loginPerform'])->name('loginPerform');
 Route::get('/admin', [AdminController::class, 'adminView']);
-Route::get('/logout', [AdminController::class, 'logout']);
+Route::get('/logout', [Controller::class, 'logout']);

@@ -12,7 +12,7 @@
         <h4>Santo Sorteado</h4>
         <img src="images/santos/{{ data_get($sorteio, 'bilhete.santo.imagem', '--') }}"
         class="img-fluid rounded" alt="" style="max-width:200px"/>
-        <h2>{{data_get($sorteio, 'santo.nome')}}</h2>
+        <h2>{{data_get($sorteio, 'bilhete.santo.nome')}}</h2>
     </div>
 
     <div class="col-12 col-md-4 py-5 bg-primary">
